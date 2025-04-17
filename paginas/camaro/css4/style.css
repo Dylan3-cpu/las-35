@@ -1,0 +1,130 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;  /* Increased from 800px to accommodate horizontal layout */
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Encabezado principal */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #222;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background-color: #555;
+}
+
+/* Secciones de proyectos */
+h2 {
+    font-size: 2.2rem;
+    margin: 20px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Eliminando el círculo antes del título */
+h2::before {
+    display: none;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    padding: 0;
+}
+
+/* Contenedor para alinear proyectos horizontalmente */
+.projects-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.project {
+    flex: 1;
+    margin-bottom: 40px;
+    max-width: calc(33.333% - 14px);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Efecto hover para interactividad */
+.project:hover h2 {
+    color: #000;
+}
+
+.project:hover h2::before {
+    background-color: #000;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Contenedor de imagen */
+.image-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project:hover .image-container img {
+    transform: scale(1.05);
+}
+
+/* Efectos hover mejorados */
+.project:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Media queries para responsive */
+@media (max-width: 992px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    
+    .project {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    .image-container {
+        height: 200px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
